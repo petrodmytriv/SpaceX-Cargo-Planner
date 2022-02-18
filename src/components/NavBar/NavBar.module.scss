@@ -1,0 +1,58 @@
+@import "./src/styles/mixins";
+.menu {
+    width: 310px;
+    justify-content: left;
+    margin-top: 32px;
+}
+
+.title {
+    margin-bottom: 11px!important;
+
+    text-align: left;
+    padding-left: 40px;
+
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 38px;
+
+    text-transform: uppercase;
+
+    color: #979797;
+}
+
+.list {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin: 0;
+}
+
+.link {
+    @include font(16px, 24px, #979797);
+    padding: 3px 0 3px 0;
+    display: inline-block;
+    width: 269px;
+
+    text-decoration: none;
+
+}
+
+.listItems {
+    padding: 4px 0 4px 0;
+    list-style: none;
+
+    text-align: left;
+    width: 269px;
+}
+
+.link:hover {
+    background: linear-gradient(90deg, rgba(45, 48, 56, 0) 22.92%, #2D3038 100%);
+    color: #FFFFFF;
+
+    border-radius: 10px;
+    box-sizing: border-box;
+}

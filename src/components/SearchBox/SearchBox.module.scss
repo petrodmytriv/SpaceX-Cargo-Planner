@@ -1,0 +1,35 @@
+.wrapper {
+    position: relative;
+    width: 320px;
+    height: 50px;
+
+    margin-left: 108px;
+
+}
+
+.search {
+    width: 320px;
+    height: 50px;
+
+    padding-left: 51px;
+
+    border: none;
+    border-radius: 10px;
+}
+.search::placeholder {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.searchIcon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    left: 25px;
+    top: 50%;
+}
