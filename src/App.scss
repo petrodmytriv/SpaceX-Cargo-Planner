@@ -1,0 +1,28 @@
+.App {
+}
+
+html {
+  background: #1b1d22;
+}
+
+.content {
+  display: flex;
+}
+
+.content > article {
+  position: relative;
+  margin-left: 50px;
+  margin-bottom: 51px;
+  @media screen and (max-width: 375px) {
+    margin-left: 20px;
+    margin-bottom: 26px!important;
+  }
+}
+
+h2 {
+  margin: 0 !important;
+}
+
+h4 {
+  margin: 0 !important;
+}

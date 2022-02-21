@@ -1,9 +1,26 @@
 @import "./src/styles/mixins";
+@import "./src/styles/keyframes";
 
 .menu {
   width: 310px;
   justify-content: left;
   margin-top: 32px;
+  @media screen and (max-width: 375px) {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 80px;
+  left: -20px;
+  background: #1B1D22;
+  width: 375px;
+  height: 720px;
+  transform: translateX(0);
+  animation: slidein 1s ease;
+  z-index: 100;
+
 }
 
 .title {
@@ -39,6 +56,9 @@
   width: 269px;
 
   text-decoration: none;
+  @media screen and (max-width: 375px) {
+    width: 375px;
+  }
 
 }
 
@@ -55,6 +75,9 @@
 
   border-radius: 10px;
   box-sizing: border-box;
+  @media screen and (max-width: 375px){
+    width: 335px;
+  }
 }
 
 .listItems {
@@ -71,4 +94,18 @@
 
   border-radius: 10px;
   box-sizing: border-box;
+}
+
+.burger {
+  display: none;
+  @media screen and (max-width: 375px) {
+    display: inline;
+    position: absolute;
+    top: 23px;
+    right: 0;
+    margin-right: 14px;
+    background: none;
+    border: none;
+
+  }
 }

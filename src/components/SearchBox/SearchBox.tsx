@@ -11,7 +11,7 @@ export const SearchBox = () => {
     .filter((data) => data.name.toLowerCase().includes(search))
     .slice(0, 3)
     .map((filtered) => (
-      <li className={styles.searchList}>
+      <li key={filtered.id} className={styles.searchList}>
         <a className={styles.searchLink} href={filtered.route}>
           {filtered.name}
         </a>

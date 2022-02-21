@@ -49,7 +49,7 @@ export const CargoCalculation = () => {
             }}
           />
         </div>
-        <div>
+        <div className={styles.requiredBlock}>
           <p className={styles.required}>Number of required cargo bays</p>
           <p className={styles.bays}>
             {bays ? bays : "Please enter a valid number"}

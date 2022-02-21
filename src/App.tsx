@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import { NavBar } from "./components/NavBar/NavBar";
 import { CargoCalculation } from "./pages/CargoCalculation/CargoCalculation";
 import { Header } from "./components/Header/Header";
