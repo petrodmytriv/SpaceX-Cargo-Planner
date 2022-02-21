@@ -1,9 +1,9 @@
 .App {
-  height: 100vh;
 
+}
+html {
   background: #1B1D22;
 }
-
 .content {
   display: flex;
 }
