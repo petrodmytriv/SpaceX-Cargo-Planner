@@ -34,7 +34,7 @@ export const NavBar = () => {
           showNav ? setShowNav(false) : setShowNav(true);
         }}
       >
-        {showNav ? (
+        {!showNav ? (
           <img src={burger} alt="burger" />
         ) : (
           <img src={cancel} alt="cancel" />
