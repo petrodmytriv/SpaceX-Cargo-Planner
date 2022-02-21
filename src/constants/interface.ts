@@ -1,4 +1,4 @@
-export interface ShipmentInterface {
+export interface Shipment {
   id: string;
   name: string;
   email: string;

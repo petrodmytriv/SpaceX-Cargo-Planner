@@ -13,14 +13,23 @@
 .mobileMenu {
   position: absolute;
   top: 80px;
-  left: -20px;
   background: #1B1D22;
-  width: 375px;
-  height: 720px;
+  width: 100vw;
+  height: 100vh;
   transform: translateX(0);
-  animation: slidein 1s ease;
+  animation: slidein 0.4s ease;
   z-index: 100;
 
+}
+
+.burgerIcon:nth-child(0) {
+  transform: translateX(0);
+  animation: spin 1.8s ease;
+}
+
+.cancelIcon {
+  transform: translateX(0);
+  animation: spin 0.4s ease;
 }
 
 .title {
@@ -38,6 +47,10 @@
   text-transform: uppercase;
 
   color: #979797;
+
+  @media screen and (max-width: 375px) {
+    padding-left: 20px;
+  }
 }
 
 .list {
@@ -47,6 +60,10 @@
   align-items: flex-start;
 
   margin: 0;
+
+  @media screen and (max-width: 375px) {
+    padding-left: 20px;
+  }
 }
 
 .link {
@@ -57,7 +74,7 @@
 
   text-decoration: none;
   @media screen and (max-width: 375px) {
-    width: 375px;
+    width: 335px;
   }
 
 }

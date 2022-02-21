@@ -1,17 +1,16 @@
 import styles from "./CargoCalculation.module.scss";
 import shipment from "../../query/shipments.json";
-import { useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
+import { cargoService } from "../../services/cargo.service";
 
-export const CargoCalculation = () => {
+export const CargoCalculation: FunctionComponent = () => {
   let data: any;
   const [cargo, setCargo] = useState("");
   const [bays, setBays] = useState(0);
 
   useEffect(() => {
-    const toNumbers = cargo.split(",").map(Number);
-    const sum = toNumbers.reduce((partialSum, a) => partialSum + a, 0);
-
-    return setBays(Math.ceil(sum / 10));
+    const bays = cargoService.calcBays(cargo);
+    return setBays(bays);
   }, [cargo]);
 
   useEffect(() => {
@@ -32,6 +31,7 @@ export const CargoCalculation = () => {
         return (data = shipment[3]);
     }
   };
+
   checkPath();
   return (
     <article className={styles.wrapper}>

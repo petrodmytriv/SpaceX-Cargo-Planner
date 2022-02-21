@@ -2,9 +2,9 @@ import shipment from "../../query/shipments.json";
 import styles from "./NavBar.module.scss";
 import burger from "../../assets/icons/Burger.svg";
 import cancel from "../../assets/icons/Cancel.svg";
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
 
-export const NavBar = () => {
+export const NavBar: FunctionComponent = () => {
   const [showNav, setShowNav] = useState(false);
 
   const path = window.location.pathname;
@@ -20,7 +20,6 @@ export const NavBar = () => {
       </li>
     );
   });
-  console.log(showNav);
 
   return (
     <>
@@ -35,9 +34,9 @@ export const NavBar = () => {
         }}
       >
         {!showNav ? (
-          <img src={burger} alt="burger" />
+          <img className={styles.burgerIcon} src={burger} alt="burger" />
         ) : (
-          <img src={cancel} alt="cancel" />
+          <img className={styles.cancelIcon} src={cancel} alt="cancel" />
         )}
       </button>
     </>

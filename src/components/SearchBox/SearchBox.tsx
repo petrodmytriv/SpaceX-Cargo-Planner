@@ -1,9 +1,9 @@
 import searchIcon from "../../assets/icons/Search.svg";
 import styles from "./SearchBox.module.scss";
 import shipment from "../../query/shipments.json";
-import { useState } from "react";
+import { FunctionComponent, KeyboardEventHandler, useState } from "react";
 
-export const SearchBox = () => {
+export const SearchBox: FunctionComponent = () => {
   const [search, setSearch] = useState("");
   const [isFocused, setIsFocused] = useState(false);
 
@@ -18,7 +18,7 @@ export const SearchBox = () => {
       </li>
     ));
 
-  const onEnterPress = (event: any) => {
+  const onEnterPress: KeyboardEventHandler = (event) => {
     if (event.key === "Enter") {
       window.location.pathname = searchDropdown[0].props.children.props.href;
     }
