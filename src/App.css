@@ -1,22 +1,24 @@
 .App {
 
 }
+
 html {
-  background: #1B1D22;
+    background: #1B1D22;
 }
+
 .content {
-  display: flex;
+    display: flex;
 }
 
 .content > article {
- margin-left: 50px;
+    margin-left: 50px;
 }
 
 h2 {
-  margin: 0!important;
+    margin: 0 !important;
 }
 
 h4 {
-  margin: 0!important;
+    margin: 0 !important;
 }
 
