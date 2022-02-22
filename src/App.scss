@@ -6,6 +6,9 @@
   @media screen and (max-width: $media-medium) {
     height: 100vh;
   }
+  @media screen and (max-height: 530px){
+    height: auto;
+  }
 }
 
 .content {
@@ -18,6 +21,11 @@
   @media screen and (max-width: 600px) {
     padding: 0 15px;
     box-sizing: border-box;
+  }
+
+  @media screen and (max-height: 530px){
+    height: auto;
+
   }
 
   article {
@@ -34,6 +42,10 @@
       margin-left: 20px;
       margin-bottom: 29px !important;
       height: 75vh;
+    }
+    @media screen and (max-height: 530px){
+      height: auto;
+      padding-bottom: 20px;
     }
   }
 }
