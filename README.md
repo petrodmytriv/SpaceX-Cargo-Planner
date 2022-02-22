@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Getting started
 
-Clone this repository.
+Clone this repository: `git clone https://github.com/petrodmytriv/SpaceX.git`.
 
 `npm install` to install all required dependencies.
 
