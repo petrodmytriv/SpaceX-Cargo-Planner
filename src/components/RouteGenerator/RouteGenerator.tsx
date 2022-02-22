@@ -10,7 +10,7 @@ export const RoutesGenerator = () => {
         {shipment.map((route) => {
           return (
             <Route
-              path=':id'
+              path=':company'
               key={route.id}
               element={<CargoCalculation shipment={shipment} />}
             />

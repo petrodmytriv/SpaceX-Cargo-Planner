@@ -1,23 +1,25 @@
-import shipment from '../../query/shipments.json';
-import styles from './NavBar.module.scss';
-import burger from '../../assets/icons/Burger.svg';
-import cancel from '../../assets/icons/Cancel.svg';
-import { FunctionComponent, useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import '../../styles/animation.scss';
-import { useParams } from 'react-router-dom';
+import shipment from "../../query/shipments.json";
+import styles from "./NavBar.module.scss";
+import burger from "../../assets/icons/Burger.svg";
+import cancel from "../../assets/icons/Cancel.svg";
+import { FunctionComponent, useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import "../../styles/animation.scss";
+import { useParams } from "react-router-dom";
 
 export const NavBar: FunctionComponent = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const { id } = useParams();
+  const { company } = useParams();
 
   const menuNames = shipment.map((item) => {
     return (
       <li className={styles.listItems} key={item.id}>
         <a
-          className={'/' + item.id === id ? styles.activeLink : styles.link}
-          href={item.id}
+          className={
+            "/" + item.name === company ? styles.activeLink : styles.link
+          }
+          href={item.name.toLowerCase().replaceAll(" ", "-")}
         >
           {item.name}
         </a>
@@ -49,7 +51,12 @@ export const NavBar: FunctionComponent = () => {
         <button
           className={styles.burger}
           onClick={() => {
-            showMenu ? setShowMenu(false) : setShowMenu(true);
+            setShowMenu(!showMenu);
+            if (!showMenu) {
+              document.body.classList.add("hidden");
+            } else {
+              document.body.classList.remove("hidden");
+            }
           }}
         >
           {!showMenu ? (

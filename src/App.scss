@@ -13,7 +13,6 @@
 
 .content {
   display: flex;
-  height: calc(100% - 122px);
 
   @media screen and (max-width: $media-medium) {
     display: block;

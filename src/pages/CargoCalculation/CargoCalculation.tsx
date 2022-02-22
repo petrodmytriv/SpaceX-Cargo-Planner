@@ -1,24 +1,28 @@
-import styles from './CargoCalculation.module.scss';
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Shipment } from '../../constants/interface';
+import styles from "./CargoCalculation.module.scss";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Shipment } from "../../constants/interface";
 
 export const CargoCalculation = ({ shipment }: any) => {
-  const [cargo, setCargo] = useState('');
+  const [cargo, setCargo] = useState("");
 
-  const { id } = useParams();
+  const { company } = useParams();
 
   useEffect(() => {
     setCargo(data.boxes);
   }, []);
 
   const data = useMemo(
-    () => shipment.find((route: Shipment) => route.id === id),
-    [shipment, id]
+    () =>
+      shipment.find(
+        (route: Shipment) =>
+          route.name.toLowerCase().replaceAll(" ", "-") === company
+      ),
+    [shipment, company]
   );
 
   const bays: number = useMemo(() => {
-    const toNumbers = cargo.split(',').map(Number);
+    const toNumbers = cargo.split(",").map(Number);
     const sum = toNumbers.reduce((prev, curr) => prev + curr, 0);
     return Math.ceil(sum / 10);
   }, [cargo]);
@@ -46,7 +50,7 @@ export const CargoCalculation = ({ shipment }: any) => {
         </div>
         <div className={styles.requiredBlock}>
           <p className={styles.required}>Number of required cargo bays</p>
-          <p className={styles.bays}>{bays ?? 'Please enter a valid number'}</p>
+          <p className={styles.bays}>{bays ?? "Please enter a valid number"}</p>
         </div>
       </div>
     </article>
