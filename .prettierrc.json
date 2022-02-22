@@ -1,5 +1,5 @@
 {
-  "singleQuote": true,
+  "singleQuote": false,
   "jsxSingleQuote": true,
   "arrowParens": "always",
   "max-len": ["error", 140, 2],

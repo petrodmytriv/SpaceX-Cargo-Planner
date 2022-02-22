@@ -3,10 +3,12 @@
 .header {
     display: flex;
     padding: 40px 0 0 40px;
-
-    @media screen and (max-width: $media-width){
+    @media screen and (max-width: $media-big) {
+        padding-right: 44px;
+    }
+    @media screen and (max-width: $media-medium){
         flex-direction: column;
-        padding: 20px 0 0 20px;
+        padding: 20px 20px 0 20px;
     }
 }
 
@@ -14,14 +16,14 @@
     width: 212px;
     height: 42px;
 
-    @media screen and (max-width: $media-width) {
+    @media screen and (max-width: $media-medium) {
         width: 151px;
         height: 30px;
     }
 }
 
 .wrapper {
-    @media screen and (max-width: $media-width) {
+    @media screen and (max-width: $media-medium) {
         display: flex;
         justify-content: space-between;
     }

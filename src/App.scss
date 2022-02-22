@@ -3,7 +3,7 @@
 
 
 .App {
-  @media screen and (max-width: $media-width) {
+  @media screen and (max-width: $media-medium) {
     height: 100vh;
   }
 }
@@ -12,8 +12,12 @@
   display: flex;
   height: calc(100% - 122px);
 
-  @media screen and (max-width: $media-width) {
-    width: 335px;
+  @media screen and (max-width: $media-medium) {
+    display: block;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 0 15px;
+    box-sizing: border-box;
   }
 
   article {
@@ -24,7 +28,8 @@
     height: calc(100vh - 175px);
     margin-right: 44px;
 
-    @media screen and (max-width: $media-width) {
+    @media screen and (max-width: $media-medium) {
+      width: 100%;
       padding: 20px 15px 0 15px;
       margin-left: 20px;
       margin-bottom: 29px !important;

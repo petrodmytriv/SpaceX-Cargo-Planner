@@ -7,7 +7,11 @@
   justify-content: left;
   margin-top: 32px;
 
-  @media screen and (max-width: $media-width) {
+  @media screen and (max-width: $media-big) {
+    width: 220px;
+  }
+
+  @media screen and (max-width: $media-medium) {
     display: none;
   }
 }
@@ -15,6 +19,7 @@
 .mobileMenu {
   position: absolute;
   top: 80px;
+  left: 0;
   background: $background-color;
   width: 100vw;
   height: calc(100vh - 10%);
@@ -33,7 +38,7 @@
   text-transform: uppercase;
   color: $grey;
 
-  @media screen and (max-width: $media-width) {
+  @media screen and (max-width: $media-medium) {
     padding-left: 20px;
   }
 }
@@ -45,7 +50,7 @@
   align-items: flex-start;
   margin: 0;
 
-  @media screen and (max-width: $media-width) {
+  @media screen and (max-width: $media-medium) {
     padding-left: 20px;
   }
 }
@@ -57,7 +62,7 @@
   width: 269px;
 
   text-decoration: none;
-  @media screen and (max-width: $media-width) {
+  @media screen and (max-width: $media-medium) {
     width: 335px;
   }
 
@@ -74,7 +79,7 @@
   border-radius: 10px;
   box-sizing: border-box;
 
-  @media screen and (max-width: $media-width) {
+  @media screen and (max-width: $media-medium) {
     width: 335px;
   }
 }
@@ -96,7 +101,7 @@
 .burger {
   display: none;
 
-  @media screen and (max-width: $media-width) {
+  @media screen and (max-width: $media-medium) {
     display: inline;
     position: absolute;
     top: 23px;
