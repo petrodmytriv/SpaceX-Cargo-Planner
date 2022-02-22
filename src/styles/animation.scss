@@ -31,18 +31,18 @@
 .menu-enter-active {
 
   transform: translateX(0);
-  animation: slidein .4s ease;
+  animation: slideIn .4s ease;
 }
 
 .menu-exit {
   transform: translateX(0);
-  animation: slideinReverse .4s ease;
+  animation: slideInReverse .4s ease;
 }
 
 .menu-exit-active {
 
   transform: translateX(0);
-  animation: slideinReverse .4s ease;
+  animation: slideInReverse .4s ease;
 }
 
 

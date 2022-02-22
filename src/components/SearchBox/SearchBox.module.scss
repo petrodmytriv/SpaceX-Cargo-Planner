@@ -6,29 +6,26 @@
   width: 320px;
   height: 50px;
   z-index: 10;
-
   margin-left: 108px;
+
   @media screen and (max-width: $media-width){
     margin: 32px 0 0 0;
     width: 335px;
     height: 40px;
   }
-
 }
 
 .search {
   width: 320px;
   height: 50px;
-
   padding-left: 51px;
-
   border: none;
   border-radius: 10px;
+
   @media screen and (max-width: $media-width){
     width: 335px;
     height: 40px;
   }
-
 }
 
 .search::placeholder {
@@ -38,7 +35,6 @@
 .searchIcon {
   position: absolute;
   transform: translate(-50%, -50%);
-
   left: 25px;
   top: 50%;
 }
@@ -46,9 +42,7 @@
 .searchList {
   padding: 8px 0 8px 0;
   list-style: none;
-
   width: 320px;
-
 }
 
 .searchLink {
@@ -56,14 +50,12 @@
   padding: 6px 0 6px 24px;
   display: inline-block;
   width: 320px;
-
   text-decoration: none;
 }
 
 .searchLink:hover {
   background: $background-color;
   color: $white;
-
   border-radius: 10px;
   box-sizing: border-box;
 }
@@ -72,13 +64,12 @@
   width: 320px;
   position: absolute;
   top: 54px;
-  z-index: 8;
-
-  transition-duration: 0.3s;
-
   background-color: $white;
   border: solid 1px black;
   border-radius: 10px;
+  transition-duration: 0.3s;
+  z-index: 8;
+
   @media screen and (max-width: $media-width){
     width: 335px;
   }

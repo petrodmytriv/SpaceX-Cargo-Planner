@@ -1,6 +1,10 @@
+@import "./styles/variables";
+
+
+
 .App {
-  @media screen and (max-width: 375px){
-    height: calc(100vh);
+  @media screen and (max-width: $media-width) {
+    height: 100vh;
   }
 }
 
@@ -8,25 +12,24 @@
   display: flex;
   height: calc(100% - 122px);
 
-  @media screen and (max-width: 375px){
-
+  @media screen and (max-width: $media-width) {
+    width: 335px;
   }
-}
 
-.content > article {
-  position: relative;
-  margin-left: 50px;
-  margin-bottom: 51px;
-  width: 100%;
-  height: calc(100vh - 175px);
-  margin-right: 44px;
+  article {
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 51px;
+    width: 100%;
+    height: calc(100vh - 175px);
+    margin-right: 44px;
 
-  @media screen and (max-width: 375px) {
-    padding: 20px 15px 0 15px;
-    margin-left: 20px;
-    margin-bottom: 29px!important;
-    height: 75vh;
-
+    @media screen and (max-width: $media-width) {
+      padding: 20px 15px 0 15px;
+      margin-left: 20px;
+      margin-bottom: 29px !important;
+      height: 75vh;
+    }
   }
 }
 

@@ -1,23 +1,22 @@
-import shipment from "../../query/shipments.json";
-import styles from "./NavBar.module.scss";
-import burger from "../../assets/icons/Burger.svg";
-import cancel from "../../assets/icons/Cancel.svg";
-import { FunctionComponent, useState } from "react";
-import { CSSTransition } from "react-transition-group";
-import "../../styles/animation.scss";
-import { useParams } from "react-router-dom";
+import shipment from '../../query/shipments.json';
+import styles from './NavBar.module.scss';
+import burger from '../../assets/icons/Burger.svg';
+import cancel from '../../assets/icons/Cancel.svg';
+import { FunctionComponent, useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import '../../styles/animation.scss';
+import { useParams } from 'react-router-dom';
 
 export const NavBar: FunctionComponent = () => {
-  const [showNav, setShowNav] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const { id } = useParams();
-  const path = window.location.pathname;
-  console.log(id, path);
+
   const menuNames = shipment.map((item) => {
     return (
       <li className={styles.listItems} key={item.id}>
         <a
-          className={"/" + item.id === path ? styles.activeLink : styles.link}
+          className={'/' + item.id === id ? styles.activeLink : styles.link}
           href={item.id}
         >
           {item.name}
@@ -29,34 +28,34 @@ export const NavBar: FunctionComponent = () => {
   return (
     <>
       <CSSTransition
-        in={showNav}
+        in={showMenu}
         timeout={400}
-        classNames="menu"
-        onEnter={() => setShowNav(true)}
-        onExited={() => setShowNav(false)}
+        classNames='menu'
+        onEnter={() => setShowMenu(true)}
+        onExited={() => setShowMenu(false)}
       >
-        <nav className={!showNav ? styles.menu : styles.mobileMenu}>
+        <nav className={!showMenu ? styles.menu : styles.mobileMenu}>
           <h4 className={styles.title}>shipment list</h4>
           <ul className={styles.list}>{menuNames}</ul>
         </nav>
       </CSSTransition>
       <CSSTransition
-        in={showNav}
+        in={showMenu}
         timeout={400}
-        classNames="burger"
-        onEnter={() => setShowNav(true)}
-        onExited={() => setShowNav(false)}
+        classNames='burger'
+        onEnter={() => setShowMenu(true)}
+        onExited={() => setShowMenu(false)}
       >
         <button
           className={styles.burger}
           onClick={() => {
-            showNav ? setShowNav(false) : setShowNav(true);
+            showMenu ? setShowMenu(false) : setShowMenu(true);
           }}
         >
-          {!showNav ? (
-            <img className={styles.burgerIcon} src={burger} alt="burger" />
+          {!showMenu ? (
+            <img className={styles.burgerIcon} src={burger} alt='burger' />
           ) : (
-            <img className={styles.cancelIcon} src={cancel} alt="cancel" />
+            <img className={styles.cancelIcon} src={cancel} alt='cancel' />
           )}
         </button>
       </CSSTransition>

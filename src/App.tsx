@@ -1,14 +1,12 @@
-import React from "react";
-import "./App.scss";
-import { NavBar } from "./components/NavBar/NavBar";
-import { Header } from "./components/Header/Header";
-import { RoutesGenerator } from "./components/RouteGenerator/RouteGenerator";
+import React from 'react';
+import './App.scss';
+import { Header, NavBar, RoutesGenerator } from './components';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Header />
-      <div className="content">
+      <div className='content'>
         <NavBar />
         <RoutesGenerator />
       </div>

@@ -1,9 +1,10 @@
-import styles from "./CargoCalculation.module.scss";
-import { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import styles from './CargoCalculation.module.scss';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Shipment } from '../../constants/interface';
 
 export const CargoCalculation = ({ shipment }: any) => {
-  const [cargo, setCargo] = useState("");
+  const [cargo, setCargo] = useState('');
 
   const { id } = useParams();
 
@@ -12,15 +13,19 @@ export const CargoCalculation = ({ shipment }: any) => {
   }, []);
 
   const data = useMemo(
-    () => shipment.find((route: any) => route.id === id),
+    () => shipment.find((route: Shipment) => route.id === id),
     [shipment, id]
   );
 
   const bays: number = useMemo(() => {
-    const toNumbers = cargo.split(",").map(Number);
+    const toNumbers = cargo.split(',').map(Number);
     const sum = toNumbers.reduce((prev, curr) => prev + curr, 0);
     return Math.ceil(sum / 10);
   }, [cargo]);
+
+  const calculateCargo = useCallback((e) => {
+    setCargo(e.target.value);
+  }, []);
 
   return (
     <article className={styles.wrapper}>
@@ -31,18 +36,17 @@ export const CargoCalculation = ({ shipment }: any) => {
           <p className={styles.inputTitle}>cargo boxes</p>
           <input
             className={styles.input}
-            type="text"
+            type='text'
             value={cargo}
             onChange={(e) => {
-              setCargo(e.target.value);
+              calculateCargo(e);
             }}
+            tabIndex={1}
           />
         </div>
         <div className={styles.requiredBlock}>
           <p className={styles.required}>Number of required cargo bays</p>
-          <p className={styles.bays}>
-            {bays ? bays : "Please enter a valid number"}
-          </p>
+          <p className={styles.bays}>{bays ?? 'Please enter a valid number'}</p>
         </div>
       </div>
     </article>
