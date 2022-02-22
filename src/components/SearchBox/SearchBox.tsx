@@ -8,7 +8,7 @@ export const SearchBox: FunctionComponent = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   const searchDropdown = shipment
-    .filter((data) => data.name.toLowerCase().includes(search))
+    .filter((data) => data.name.toLowerCase().includes(search.toLowerCase()))
     .slice(0, 3)
     .map((filtered) => (
       <li key={filtered.id} className={styles.searchList}>

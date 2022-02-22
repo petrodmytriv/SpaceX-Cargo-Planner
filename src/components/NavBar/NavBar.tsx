@@ -3,6 +3,8 @@ import styles from "./NavBar.module.scss";
 import burger from "../../assets/icons/Burger.svg";
 import cancel from "../../assets/icons/Cancel.svg";
 import { FunctionComponent, useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import "./animation.scss";
 
 export const NavBar: FunctionComponent = () => {
   const [showNav, setShowNav] = useState(false);
@@ -23,22 +25,38 @@ export const NavBar: FunctionComponent = () => {
 
   return (
     <>
-      <nav className={!showNav ? styles.menu : styles.mobileMenu}>
-        <h4 className={styles.title}>shipment list</h4>
-        <ul className={styles.list}>{menuNames}</ul>
-      </nav>
-      <button
-        className={styles.burger}
-        onClick={() => {
-          showNav ? setShowNav(false) : setShowNav(true);
-        }}
+      <CSSTransition
+        in={showNav}
+        timeout={400}
+        classNames="menu"
+        onEnter={() => setShowNav(true)}
+        onExited={() => setShowNav(false)}
       >
-        {!showNav ? (
-          <img className={styles.burgerIcon} src={burger} alt="burger" />
-        ) : (
-          <img className={styles.cancelIcon} src={cancel} alt="cancel" />
-        )}
-      </button>
+        <nav className={!showNav ? styles.menu : styles.mobileMenu}>
+          <h4 className={styles.title}>shipment list</h4>
+          <ul className={styles.list}>{menuNames}</ul>
+        </nav>
+      </CSSTransition>
+      <CSSTransition
+        in={showNav}
+        timeout={400}
+        classNames="burger"
+        onEnter={() => setShowNav(true)}
+        onExited={() => setShowNav(false)}
+      >
+        <button
+          className={styles.burger}
+          onClick={() => {
+            showNav ? setShowNav(false) : setShowNav(true);
+          }}
+        >
+          {!showNav ? (
+            <img className={styles.burgerIcon} src={burger} alt="burger" />
+          ) : (
+            <img className={styles.cancelIcon} src={cancel} alt="cancel" />
+          )}
+        </button>
+      </CSSTransition>
     </>
   );
 };

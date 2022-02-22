@@ -3,6 +3,7 @@
 
 .content {
   display: flex;
+  height: calc(100% - 90px);
 }
 
 .content > article {
