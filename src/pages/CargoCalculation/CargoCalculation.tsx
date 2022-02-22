@@ -2,11 +2,15 @@ import styles from "./CargoCalculation.module.scss";
 import shipment from "../../query/shipments.json";
 import { FunctionComponent, useEffect, useState } from "react";
 import { cargoService } from "../../services/cargo.service";
+import { useParams, useSearchParams } from "react-router-dom";
 
 export const CargoCalculation: FunctionComponent = () => {
   let data: any;
   const [cargo, setCargo] = useState("");
   const [bays, setBays] = useState(0);
+  //const [params, setParams] = useSearchParams();
+  const { id } = useParams();
+  console.log(id);
 
   useEffect(() => {
     const bays = cargoService.calcBays(cargo);
