@@ -1,8 +1,10 @@
+@import "../../styles/variables";
+
 .header {
     display: flex;
 
     padding: 40px 0 0 40px;
-    @media screen and (max-width: 375px){
+    @media screen and (max-width: $media-width){
         flex-direction: column;
 
         padding: 20px 0 0 20px;
@@ -12,14 +14,14 @@
 .logo {
     width: 212px;
     height: 42px;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: $media-width) {
         width: 151px;
         height: 30px;
     }
 }
 
 .wrapper {
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: $media-width) {
         display: flex;
         justify-content: space-between;
     }

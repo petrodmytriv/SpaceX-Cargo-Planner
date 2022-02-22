@@ -4,18 +4,21 @@ import burger from "../../assets/icons/Burger.svg";
 import cancel from "../../assets/icons/Cancel.svg";
 import { FunctionComponent, useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import "./animation.scss";
+import "../../styles/animation.scss";
+import { useParams } from "react-router-dom";
 
 export const NavBar: FunctionComponent = () => {
   const [showNav, setShowNav] = useState(false);
 
+  const { id } = useParams();
   const path = window.location.pathname;
+  console.log(id, path);
   const menuNames = shipment.map((item) => {
     return (
       <li className={styles.listItems} key={item.id}>
         <a
-          className={item.route === path ? styles.activeLink : styles.link}
-          href={item.route}
+          className={"/" + item.id === path ? styles.activeLink : styles.link}
+          href={item.id}
         >
           {item.name}
         </a>

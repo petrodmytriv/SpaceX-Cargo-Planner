@@ -1,4 +1,4 @@
-@import "./src/styles/keyframes";
+@import "keyframes";
 
 
 .burger-enter {
@@ -6,14 +6,17 @@
   transform: translateX(0);
   animation: spin .6s ease;
 }
+
 .burger-enter-active {
   transform: translateX(0);
 
 }
+
 .burger-exit {
   transform: translateX(0);
   animation: spinReverse .6s ease;
 }
+
 .burger-exit-active {
 
   transform: scale(1);
@@ -24,15 +27,18 @@
 
   transform: translateX(0);
 }
+
 .menu-enter-active {
 
   transform: translateX(0);
   animation: slidein .4s ease;
 }
+
 .menu-exit {
   transform: translateX(0);
   animation: slideinReverse .4s ease;
 }
+
 .menu-exit-active {
 
   transform: translateX(0);

@@ -1,4 +1,5 @@
 @import "./src/styles/mixins";
+@import "../../styles/variables";
 
 .wrapper {
   position: relative;
@@ -7,7 +8,7 @@
   z-index: 10;
 
   margin-left: 108px;
-  @media screen and (max-width: 375px){
+  @media screen and (max-width: $media-width){
     margin: 32px 0 0 0;
     width: 335px;
     height: 40px;
@@ -23,7 +24,7 @@
 
   border: none;
   border-radius: 10px;
-  @media screen and (max-width: 375px){
+  @media screen and (max-width: $media-width){
     width: 335px;
     height: 40px;
   }
@@ -31,7 +32,7 @@
 }
 
 .search::placeholder {
-  @include font(16px, 24px, #000000);
+  @include font(16px, 24px, $black);
 }
 
 .searchIcon {
@@ -51,7 +52,7 @@
 }
 
 .searchLink {
-  @include font(16px, 24px, #979797);
+  @include font(16px, 24px, $grey);
   padding: 6px 0 6px 24px;
   display: inline-block;
   width: 320px;
@@ -60,8 +61,8 @@
 }
 
 .searchLink:hover {
-  background: #2D303880;
-  color: #FFFFFF;
+  background: $background-color;
+  color: $white;
 
   border-radius: 10px;
   box-sizing: border-box;
@@ -75,10 +76,10 @@
 
   transition-duration: 0.3s;
 
-  background-color: #FFFFFF;
+  background-color: $white;
   border: solid 1px black;
   border-radius: 10px;
-  @media screen and (max-width: 375px){
+  @media screen and (max-width: $media-width){
     width: 335px;
   }
 }

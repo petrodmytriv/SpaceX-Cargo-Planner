@@ -12,7 +12,7 @@ export const SearchBox: FunctionComponent = () => {
     .slice(0, 3)
     .map((filtered) => (
       <li key={filtered.id} className={styles.searchList}>
-        <a className={styles.searchLink} href={filtered.route}>
+        <a className={styles.searchLink} href={filtered.id}>
           {filtered.name}
         </a>
       </li>

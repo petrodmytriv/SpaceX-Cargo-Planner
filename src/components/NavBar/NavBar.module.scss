@@ -1,11 +1,12 @@
 @import "./src/styles/mixins";
 @import "./src/styles/keyframes";
+@import "../../styles/variables";
 
 .menu {
   width: 310px;
   justify-content: left;
   margin-top: 32px;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $media-width) {
     display: none;
   }
 }
@@ -13,9 +14,9 @@
 .mobileMenu {
   position: absolute;
   top: 80px;
-  background: #1B1D22;
+  background: $background-color;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 10%);
 
   z-index: 100;
 
@@ -36,9 +37,9 @@
 
   text-transform: uppercase;
 
-  color: #979797;
+  color: $grey;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $media-width) {
     padding-left: 20px;
   }
 }
@@ -51,38 +52,38 @@
 
   margin: 0;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $media-width) {
     padding-left: 20px;
   }
 }
 
 .link {
-  @include font(16px, 24px, #979797);
+  @include font(16px, 24px, $grey);
   padding: 3px 0 3px 0;
   display: inline-block;
   width: 269px;
 
   text-decoration: none;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $media-width) {
     width: 335px;
   }
 
 }
 
 .activeLink {
-  @include font(16px, 24px, #979797);
+  @include font(16px, 24px, $grey);
   padding: 3px 0 3px 0;
   display: inline-block;
   width: 269px;
 
   text-decoration: none;
 
-  background: linear-gradient(90deg, rgba(45, 48, 56, 0) 22.92%, #2D3038 100%);
+  background: $hover-gradient;
   color: #FFFFFF;
 
   border-radius: 10px;
   box-sizing: border-box;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $media-width) {
     width: 335px;
   }
 }
@@ -96,7 +97,7 @@
 }
 
 .link:hover {
-  background: linear-gradient(90deg, rgba(45, 48, 56, 0) 22.92%, #2D3038 100%);
+  background: $hover-gradient;
   color: #FFFFFF;
 
   border-radius: 10px;
@@ -105,7 +106,7 @@
 
 .burger {
   display: none;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $media-width) {
     display: inline;
     position: absolute;
     top: 23px;

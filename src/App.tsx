@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.scss";
 import { NavBar } from "./components/NavBar/NavBar";
-import { CargoCalculation } from "./pages/CargoCalculation/CargoCalculation";
 import { Header } from "./components/Header/Header";
+import { RoutesGenerator } from "./components/RouteGenerator/RouteGenerator";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <div className="content">
         <NavBar />
-        <CargoCalculation />
+        <RoutesGenerator />
       </div>
     </div>
   );
