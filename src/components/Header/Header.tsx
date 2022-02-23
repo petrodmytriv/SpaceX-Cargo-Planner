@@ -1,5 +1,5 @@
 import logo from "../../assets/icons/Logo.svg";
-import { SearchBox } from "../SearchBox/SearchBox";
+import { SearchBox } from "../SearchBox/";
 import styles from "./Header.module.scss";
 import { FunctionComponent } from "react";
 

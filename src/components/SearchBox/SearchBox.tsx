@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 import { useNavigate } from "react-router-dom";
-import { toKebabCase } from "../../utils/toKebabCase";
+import { toKebabCase } from "../../utils";
 
 export const SearchBox: FunctionComponent = () => {
   const [search, setSearch] = useState("");

@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { CargoCalculation } from "../../pages/CargoCalculation";
 import React from "react";
 import { Shipment } from "../../constants/interface";
-import { toKebabCase } from "../../utils/toKebabCase";
+import { toKebabCase } from "../../utils";
 
 export const RoutesGenerator = () => {
   return (

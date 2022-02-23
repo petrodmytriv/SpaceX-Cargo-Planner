@@ -6,7 +6,7 @@ import { FunctionComponent, useState, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/animation.scss";
 import { useLocation } from "react-router-dom";
-import { toKebabCase } from "../../utils/toKebabCase";
+import { toKebabCase } from "../../utils";
 
 export const NavBar: FunctionComponent = () => {
   const [showMenu, setShowMenu] = useState(false);
