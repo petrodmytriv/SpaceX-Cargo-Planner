@@ -1,20 +1,24 @@
 [
-  { "id": "1",
+  {
+    "id": "1",
     "name": "Amazon",
     "email": "contact@amazon.com",
     "boxes": "6.8,7.9,3"
   },
-  { "id": "2",
+  {
+    "id": "2",
     "name": "American Express",
     "email": "contact@americanexpress.com",
     "boxes": "9.3,5,2.3,7,9"
   },
-  { "id": "3",
+  {
+    "id": "3",
     "name": "Airbnb",
     "email": "contact@airbnb.com",
     "boxes": "2,4.7,3.5,7.4,9"
   },
-  { "id": "4",
+  {
+    "id": "4",
     "name": "Apple",
     "email": "contact@apple.com",
     "boxes": "6,8,4.6"

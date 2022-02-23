@@ -1,48 +1,38 @@
 @import "keyframes";
 
-
 .burger-enter {
-
   transform: translateX(0);
-  animation: spin .6s ease;
+  animation: spin 0.6s ease;
 }
 
 .burger-enter-active {
   transform: translateX(0);
-
 }
 
 .burger-exit {
   transform: translateX(0);
-  animation: spinReverse .6s ease;
+  animation: spinReverse 0.6s ease;
 }
 
 .burger-exit-active {
-
   transform: scale(1);
-
 }
 
 .menu-enter {
-
   transform: translateX(0);
 }
 
 .menu-enter-active {
-
   transform: translateX(0);
-  animation: slideIn .4s ease;
+  animation: slideIn 0.4s ease;
 }
 
 .menu-exit {
   transform: translateX(0);
-  animation: slideInReverse .4s ease;
+  animation: slideInReverse 0.4s ease;
 }
 
 .menu-exit-active {
-
   transform: translateX(0);
-  animation: slideInReverse .4s ease;
+  animation: slideInReverse 0.4s ease;
 }
-
-

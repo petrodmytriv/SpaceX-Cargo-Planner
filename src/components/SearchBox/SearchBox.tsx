@@ -2,6 +2,7 @@ import searchIcon from "../../assets/icons/Search.svg";
 import styles from "./SearchBox.module.scss";
 import shipment from "../../query/shipments.json";
 import { FunctionComponent, KeyboardEventHandler, useState } from "react";
+import {useLocation } from "react-router-dom";
 
 export const SearchBox: FunctionComponent = () => {
   const [search, setSearch] = useState("");
@@ -11,9 +12,9 @@ export const SearchBox: FunctionComponent = () => {
     .filter((data) => data.name.toLowerCase().includes(search.toLowerCase()))
     .slice(0, 3)
     .map((filtered) => (
-      <li key={filtered.id} className={styles.searchList}>
+      <li key={filtered.id} className={styles['search-list']}>
         <a
-          className={styles.searchLink}
+          className={styles['search-link']}
           href={filtered.name.toLowerCase().replaceAll(" ", "-")}
         >
           {filtered.name}
@@ -21,9 +22,11 @@ export const SearchBox: FunctionComponent = () => {
       </li>
     ));
 
+  const dropdownFirstMatchResult = searchDropdown[0].props.children.props.href
+
   const onEnterPress: KeyboardEventHandler = (event) => {
     if (event.key === "Enter") {
-      window.location.pathname = searchDropdown[0].props.children.props.href;
+      window.location.pathname = dropdownFirstMatchResult;
     }
   };
 
@@ -39,8 +42,8 @@ export const SearchBox: FunctionComponent = () => {
         onKeyPress={onEnterPress}
         tabIndex={0}
       />
-      <img className={styles.searchIcon} src={searchIcon} alt='search' />
-      {isFocused ? <div className={styles.dropdown}>{searchDropdown}</div> : ""}
+      <img className={styles['search-icon']} src={searchIcon} alt='search' />
+      {isFocused ? <div className={styles.dropdown}>{searchDropdown}</div> : null}
     </div>
   );
 };

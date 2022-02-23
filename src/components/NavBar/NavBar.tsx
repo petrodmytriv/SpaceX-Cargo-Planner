@@ -14,10 +14,10 @@ export const NavBar: FunctionComponent = () => {
 
   const menuNames = shipment.map((item) => {
     return (
-      <li className={styles.listItems} key={item.id}>
+      <li className={styles['list-items']} key={item.id}>
         <a
           className={
-            "/" + item.name === company ? styles.activeLink : styles.link
+            "/" + item.name === company ? styles['active-link'] : styles.link
           }
           href={item.name.toLowerCase().replaceAll(" ", "-")}
         >
@@ -27,26 +27,29 @@ export const NavBar: FunctionComponent = () => {
     );
   });
 
-  const menuRef = useRef(null)
-  const burgerRef = useRef(null)
+  const menuRef = useRef(null);
+  const burgerRef = useRef(null);
 
   return (
     <>
       <CSSTransition
-          nodeRef={menuRef}
+        nodeRef={menuRef}
         in={showMenu}
         timeout={400}
         classNames='menu'
         onEnter={() => setShowMenu(true)}
         onExited={() => setShowMenu(false)}
       >
-        <nav ref={menuRef} className={!showMenu ? styles.menu : styles.mobileMenu}>
+        <nav
+          ref={menuRef}
+          className={!showMenu ? styles.menu : styles['mobile-menu']}
+        >
           <h4 className={styles.title}>shipment list</h4>
           <ul className={styles.list}>{menuNames}</ul>
         </nav>
       </CSSTransition>
       <CSSTransition
-          nodeRef={burgerRef}
+        nodeRef={burgerRef}
         in={showMenu}
         timeout={400}
         classNames='burger'
@@ -54,7 +57,7 @@ export const NavBar: FunctionComponent = () => {
         onExited={() => setShowMenu(false)}
       >
         <button
-            ref={burgerRef}
+          ref={burgerRef}
           className={styles.burger}
           onClick={() => {
             setShowMenu(!showMenu);
@@ -66,9 +69,9 @@ export const NavBar: FunctionComponent = () => {
           }}
         >
           {!showMenu ? (
-            <img className={styles.burgerIcon} src={burger} alt='burger' />
+            <img src={burger} alt='burger' />
           ) : (
-            <img className={styles.cancelIcon} src={cancel} alt='cancel' />
+            <img src={cancel} alt='cancel' />
           )}
         </button>
       </CSSTransition>

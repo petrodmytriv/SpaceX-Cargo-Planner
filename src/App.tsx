@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.scss';
-import { Header, NavBar, RoutesGenerator } from './components';
+import React from "react";
+import "./App.scss";
+import { Header, NavBar, RoutesGenerator } from "./components";
 
 function App() {
   return (

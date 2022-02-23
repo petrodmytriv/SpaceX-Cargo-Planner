@@ -37,7 +37,7 @@ export const CargoCalculation = ({ shipment }: any) => {
         <h2 className={styles.name}>{data?.name}</h2>
         <p className={styles.email}>{data?.email}</p>
         <div className={styles.cargo}>
-          <p className={styles.inputTitle}>cargo boxes</p>
+          <p className={styles['input-title']}>cargo boxes</p>
           <input
             className={styles.input}
             type='text'
@@ -48,7 +48,7 @@ export const CargoCalculation = ({ shipment }: any) => {
             tabIndex={1}
           />
         </div>
-        <div className={styles.requiredBlock}>
+        <div className={styles['required-block']}>
           <p className={styles.required}>Number of required cargo bays</p>
           <p className={styles.bays}>{bays ?? "Please enter a valid number"}</p>
         </div>
