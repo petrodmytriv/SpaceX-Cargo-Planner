@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Getting started
 
-Clone this repository: `git clone https://github.com/petrodmytriv/SpaceX.git`.
+Clone this repository: `git clone git@github.com:petrodmytriv/SpaceX-Cargo-Planner.git`.
 
 `npm install` to install all required dependencies.
 
