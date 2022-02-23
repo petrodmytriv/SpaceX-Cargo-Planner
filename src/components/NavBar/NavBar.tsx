@@ -5,21 +5,24 @@ import cancel from "../../assets/icons/Cancel.svg";
 import { FunctionComponent, useState, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/animation.scss";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { toKebabCase } from "../../utils/toKebabCase";
 
 export const NavBar: FunctionComponent = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const { company } = useParams();
+  const { pathname } = useLocation();
 
   const menuNames = shipment.map((item) => {
     return (
-      <li className={styles['list-items']} key={item.id}>
+      <li className={styles["list-items"]} key={item.id}>
         <a
           className={
-            "/" + item.name === company ? styles['active-link'] : styles.link
+            "/" + toKebabCase(item.name) === pathname
+              ? styles["active-link"]
+              : styles.link
           }
-          href={item.name.toLowerCase().replaceAll(" ", "-")}
+          href={toKebabCase(item.name)}
         >
           {item.name}
         </a>
@@ -42,7 +45,7 @@ export const NavBar: FunctionComponent = () => {
       >
         <nav
           ref={menuRef}
-          className={!showMenu ? styles.menu : styles['mobile-menu']}
+          className={!showMenu ? styles.menu : styles["mobile-menu"]}
         >
           <h4 className={styles.title}>shipment list</h4>
           <ul className={styles.list}>{menuNames}</ul>

@@ -1,7 +1,4 @@
 @mixin font($font-size, $font-height, $color) {
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: normal;
   font-size: $font-size;
   line-height: $font-height;
   color: $color;

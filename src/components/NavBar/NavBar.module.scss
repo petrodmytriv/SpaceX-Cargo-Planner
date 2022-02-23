@@ -46,6 +46,7 @@
 .list {
   @include flex(column, normal, normal, flex-start);
   margin: 0;
+  padding-left: 40px;
   overflow-x: hidden;
   overflow-y: scroll;
   height: calc(100vh - 275px);

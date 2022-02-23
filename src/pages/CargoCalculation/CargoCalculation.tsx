@@ -1,29 +1,16 @@
 import styles from "./CargoCalculation.module.scss";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useCallback, useMemo, useState } from "react";
 import { Shipment } from "../../constants/interface";
 
-export const CargoCalculation = ({ shipment }: any) => {
-  const [cargo, setCargo] = useState("");
-
-  const { company } = useParams();
-
-  useEffect(() => {
-    setCargo(data.boxes);
-  }, []);
-
-  const data = useMemo(
-    () =>
-      shipment.find(
-        (route: Shipment) =>
-          route.name.toLowerCase().replaceAll(" ", "-") === company
-      ),
-    [shipment, company]
-  );
+export const CargoCalculation = (shipment: Shipment) => {
+  const [cargo, setCargo] = useState(shipment.boxes);
 
   const bays: number = useMemo(() => {
     const toNumbers = cargo.split(",").map(Number);
-    const sum = toNumbers.reduce((prev, curr) => prev + curr, 0);
+    const sum = toNumbers.reduce(
+      (prev: number, curr: number) => prev + curr,
+      0
+    );
     return Math.ceil(sum / 10);
   }, [cargo]);
 
@@ -34,10 +21,10 @@ export const CargoCalculation = ({ shipment }: any) => {
   return (
     <article className={styles.wrapper}>
       <div className={styles.content}>
-        <h2 className={styles.name}>{data?.name}</h2>
-        <p className={styles.email}>{data?.email}</p>
+        <h2 className={styles.name}>{shipment?.name}</h2>
+        <p className={styles.email}>{shipment?.email}</p>
         <div className={styles.cargo}>
-          <p className={styles['input-title']}>cargo boxes</p>
+          <p className={styles["input-title"]}>cargo boxes</p>
           <input
             className={styles.input}
             type='text'
@@ -48,7 +35,7 @@ export const CargoCalculation = ({ shipment }: any) => {
             tabIndex={1}
           />
         </div>
-        <div className={styles['required-block']}>
+        <div className={styles["required-block"]}>
           <p className={styles.required}>Number of required cargo bays</p>
           <p className={styles.bays}>{bays ?? "Please enter a valid number"}</p>
         </div>

@@ -1,22 +1,22 @@
-import shipment from "../../query/shipments.json";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import shipments from "../../query/shipments.json";
+import { Route, Routes } from "react-router-dom";
 import { CargoCalculation } from "../../pages/CargoCalculation";
 import React from "react";
+import { Shipment } from "../../constants/interface";
+import { toKebabCase } from "../../utils/toKebabCase";
 
 export const RoutesGenerator = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        {shipment.map((route) => {
-          return (
-            <Route
-              path=':company'
-              key={route.id}
-              element={<CargoCalculation shipment={shipment} />}
-            />
-          );
-        })}
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      {shipments.map((shipment: Shipment) => {
+        return (
+          <Route
+            path={toKebabCase(shipment.name)}
+            key={shipment.id}
+            element={<CargoCalculation {...shipment} />}
+          />
+        );
+      })}
+    </Routes>
   );
 };
